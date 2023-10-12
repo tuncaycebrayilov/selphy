@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+		<!-- End Header Area -->
+
+		<!-- Main Menu Area -->
+	
+		<!-- End Main Menu Area -->
+		<!-- Cart Area -->
+		<div class="chart-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cart-title">
+							<h2>Shopping Cart</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Cart Item -->
+						<div class="chart-item table-responsive fix">
+							<table class="col-md-12">
+								<thead>
+									<tr>
+										<th class="th-delate">Remove</th>
+										<th class="th-product">Images</th>
+										<th class="th-details">Product Name</th>
+										<th class="th-edit">Edit</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										{% for cartproduct in cartproducts %}
+										<td class="th-delate"><a href="{% url 'remove_cart_product' cartproduct.product.pk %}"><i class="fa fa-trash"></i></a></td>
+										<td class="th-product">
+											<a href="#"><img src="{{ cartproduct.product.cover_image.url }}" alt="cart"></a>
+										</td>
+										<td class="th-details">
+											<h2><a href="#">{{cartproduct.product.product.title}}</a></h2>
+										</td>
+										
+										<td class="th-total">{{cartproduct.product.product.price}} $</td>
+										{% endfor %}
+									</tr>
+								</tbody>
+							</table>
+						</div><!-- End Cart Item -->
+						<div class="shoping-cart-button">
+							<div class="cart-button-left">
+								<button type="button" class="btn custom-button">Continue Shopping</button>
+							</div>
+							<div class="cart-button-right">
+								<button type="button" class="btn custom-button">Update Shopping Cart</button>
+								<button type="button" class="btn custom-button">Clear Shopping Cart</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart-shopping-area fix">
+					<!-- Cart Shoping Area -->
+					
+				</div>
+			</div>
+		</div><!-- End Cart Area -->
+		<!-- Brand Area -->
+		<div class="brand-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="brand-add">
+							<a href="#"><img src="{% static  'images/brand-logo/bl5.webp' %}" alt="brand-logo"></a>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<!-- Brand Logo -->
+						<div class="brand-logo">
+							<div id="logo-carousel" class="owl-carousel">
+								<a href="#"><img src="{% static  'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl2.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl3.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl4.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl2.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl3.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static  'images/brand-logo/bl4.webp' %}" alt="brand-logo"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End Brand Area -->	
+		<!-- Footer Area -->
+				
+
+
+    </body>
+
+<!-- Mirrored from htmldemo.net/selphy/selphy/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Jun 2023 15:05:58 GMT -->
+</html>
+{% endblock %}

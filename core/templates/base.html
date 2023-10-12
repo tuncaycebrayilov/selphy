@@ -1,0 +1,599 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as AVAILABLE_LANGUAGES %}
+{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
+<!doctype html>
+<html class="no-js" lang="">
+<style>
+    .dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-btn {
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropup-content li {
+  padding: 8px 12px;
+}
+
+.dropup-content a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropup-content a.active {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+</style>
+
+<!-- Mirrored from htmldemo.net/selphy/selphy/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Jun 2023 15:05:19 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || Selphy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nivo-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.simpleLens.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.simpleGallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo/favicon.webp' %}">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700,800,900' rel='stylesheet'
+        type='text/css'>
+
+    <!-- CSS
+		============================================ -->
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nivo-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.simpleLens.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.simpleGallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+
+<body>
+    <!-- Header Area -->
+    <div class="header-area">
+
+        <!-- Header Top -->
+        <div class="header-top">
+            <div class="container">
+                <!-- Header Top Bar-->
+                <div class="header-top-bar">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <!-- Header Top Left-->
+                            <div class="header-top-left">
+                                <div class="call-header">
+                                    <p><i class="fa fa-phone"></i>{% translate 'Call us toll free:' %}<span> (+88) 01737803547</span></p>
+                                </div>
+                                <div class="header-login">
+                                    <a href="{% url 'login' %}">{% translate 'Log in' %}</a>
+                                </div>
+                            </div><!-- End Header Top Left-->
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <!-- Header Top Right-->
+                            <div class="header-top-right">
+                                <!-- Header Link Area -->
+                                                              
+                                    <div class="header-link">
+                                        <ul>
+                                            <li class=""><a class="usd" href="#">{% translate 'Language' %}<i class="fa fa-angle-down"></i></a>
+                                                <ul>
+                                                    {% for language in languages %}
+                                                    <li>
+                                                        {% if language.code == 'en' %}
+                                                            <a href="/core/index/">
+                                                        {% else %}
+                                                            <a href="/{{ language.code }}/core/index/">
+                                                        {% endif %}
+                                                        {% if language.code == CURRENT_LANGUAGE %} {% endif %}
+                                                        {{ language.name_local }}
+                                                      </a>
+                                                    </li>
+                                                  {% endfor %}
+                                                </ul>
+                                            </li>
+                                            <li><a class="account" href="#">{% translate 'Account' %}<i class="fa fa-angle-down"></i></a>
+                                                <ul>
+                                                    <li><a href="{% url 'login' %}">{% translate 'My account' %}</a></li>
+                                                    {% if user.is_authenticated %}
+                                                        <li><a href="{% url 'logout' %}">{% translate 'Log out' %}</a></li>
+                                                    {% else %}
+                                                        <li><a href="{% url 'register' %}">{% translate 'Register' %}</a></li>
+                                                        <li><a href="{% url 'login' %}">{% translate 'Log in' %}</a></li>
+                                                    {% endif %}
+                                                    <li><a href="{% url 'cart' %}">{% translate 'My cart' %}</a></li>
+                                                    <li><a href="{% url 'checkout' %}">{% translate 'Checkout' %}</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><!-- End Header Link Area -->
+                            </div><!-- End Header Top Right-->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Header Top Bar-->
+            </div>
+        </div><!-- End Header Top -->
+
+        <!-- Header Bottom -->
+        <div class="header-bottom">
+            <div class="container">
+                <!-- Header Bottom Inner-->
+                <div class="header-bottom-inner">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-6 order-lg-1">
+                            <!-- Header Logo -->
+                            <div class="header-logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'images/logo/logo.webp' %}"
+                                        alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2  col-md-3 col-sm-4 col-5 order-lg-3">
+                            <!-- Header Actions Area-->
+                           
+    
+
+                                      
+                                </div>
+                            </div><!-- End Header Actions Area-->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Header Bottom Inner-->
+            </div>
+        </div><!-- End Header Bottom -->
+
+    </div>
+    <!-- Main Menu Area -->
+    <div class="main-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- Category Menu -->
+                    <div class="category-menu d-none d-lg-block">
+                        <div class="category-menu-title">
+                            <h2>{% translate 'Categories' %}</h2>
+                        </div>
+                        <div class="categorie-list">
+                            <ul>
+                                <li><a href="#"><img src="{% static 'images/icon/m1.webp' %}" alt="icon">Laptop<i
+                                            class="fa fa-caret-right"></i></a>
+                                    <ul class="mega-menu-ul">
+                                        <li>
+                                            <!--Mega Menu -->
+                                            <div class="mega-menu">
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Dreeses</a></h2>
+                                                    <a href="shop.html">Cocktail</a>
+                                                    <a href="shop.html">Day</a>
+                                                    <a href="shop.html">Evening</a>
+                                                    <a href="shop.html">Sports</a>
+                                                    <a href="shop.html"><img src="{% static 'images/cart/m1.webp' %}"
+                                                            alt="logo"></a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Shoes</a></h2>
+                                                    <a href="shop.html">Sports</a>
+                                                    <a href="shop.html">Run</a>
+                                                    <a href="shop.html">Sandals</a>
+                                                    <a href="shop.html">Books</a>
+                                                    <a href="shop.html"><img src="{% static 'images/cart/m2.webp' %}"
+                                                            alt="logo"></a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Handbages</a></h2>
+                                                    <a href="shop.html">Blazers</a>
+                                                    <a href="shop.html">Table</a>
+                                                    <a href="shop.html">Coat</a>
+                                                    <a href="shop.html">Kids</a>
+                                                    <a href="shop.html"><img src="{% static 'images/cart/m3.webp' %}"
+                                                            alt="logo"></a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Clothing</a></h2>
+                                                    <a href="shop.html">T-shits</a>
+                                                    <a href="shop.html">Coats</a>
+                                                    <a href="shop.html">Jacketes</a>
+                                                    <a href="shop.html">Jeans</a>
+                                                    <a href="shop.html"><img src="{% static 'images/cart/m4.webp' %}"
+                                                            alt="logo"></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><img src="{% static 'images/cart/m2.webp' %}" alt="icon">Mobile<i
+                                            class="fa fa-caret-right"></i></a>
+                                    <ul class="mega-menu-ul">
+                                        <li>
+                                            <!--Mega Menu -->
+                                            <div class="mega-menu">
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Bags</a></h2>
+                                                    <a href="shop.html">Bootes Bages</a>
+                                                    <a href="shop.html">Blazers</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Clothing</a></h2>
+                                                    <a href="shop.html">Coats</a>
+                                                    <a href="shop.html">T-shits</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Lingerie</a></h2>
+                                                    <a href="shop.html">Brands</a>
+                                                    <a href="shop.html">Firniture</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Handbags</a></h2>
+                                                    <a href="shop.html">Brands</a>
+                                                    <a href="shop.html">Firnuture</a>
+                                                    <a href="shop.html">Lifestyle</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><img src="{% static 'images/icon/m3.webp' %}" alt="icon">Tablet<i
+                                            class="fa fa-caret-right"></i></a>
+                                    <ul class="mega-menu-ul">
+                                        <li>
+                                            <!--Mega Menu -->
+                                            <div class="mega-menu">
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Footwear Man</a></h2>
+                                                    <a href="shop.html">Goald rings</a>
+                                                    <a href="shop.html">platinum rings</a>
+                                                    <a href="shop.html">silver rings</a>
+                                                    <a href="shop.html">tungsten ring</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Footwear womens</a></h2>
+                                                    <a href="shop.html">Brand Goald</a>
+                                                    <a href="shop.html">platinum rings</a>
+                                                    <a href="shop.html">silver rings</a>
+                                                    <a href="shop.html">tungsten ring</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Rings</a></h2>
+                                                    <a href="shop.html">platinum rings</a>
+                                                    <a href="shop.html">gold rings</a>
+                                                    <a href="shop.html">silver rings</a>
+                                                    <a href="shop.html">Diamond bracelets</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Brands</a></h2>
+                                                    <a href="shop.html">platinum rings</a>
+                                                    <a href="shop.html">Goald rings</a>
+                                                    <a href="shop.html">silver rings</a>
+                                                    <a href="shop.html">sunglasses</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><img src="{% static 'images/icon/m4.webp' %}" alt="icon">Headphone<i
+                                            class="fa fa-caret-right"></i></a>
+                                    <ul class="mega-menu-ul">
+                                        <li>
+                                            <!--Mega Menu -->
+                                            <div class="mega-menu">
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Rings</a></h2>
+                                                    <a href="shop.html">Coats & Jackets</a>
+                                                    <a href="shop.html">Blazers</a>
+                                                    <a href="shop.html">Jackets</a>
+                                                    <a href="shop.html">Raincoats</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Dreeses</a></h2>
+                                                    <a href="shop.html">Ankle boots</a>
+                                                    <a href="shop.html">Footwear</a>
+                                                    <a href="shop.html">Clog sandals</a>
+                                                    <a href="shop.html">combat boots</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Accessories</a></h2>
+                                                    <a href="shop.html">Bootes Bages</a>
+                                                    <a href="shop.html">Blazers</a>
+                                                    <a href="shop.html">Jackets</a>
+                                                    <a href="shop.html">Shoes</a>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h2><a href="shop.html">Top</a></h2>
+                                                    <a href="shop.html">Briefs</a>
+                                                    <a href="shop.html">Camis</a>
+                                                    <a href="shop.html">Nightwear</a>
+                                                    <a href="shop.html">Shapewear</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><img src="{% static 'images/icon/m5.webp' %}" alt="icon">Camera &
+                                        Photo</a></li>
+                                <li><a href="#"><img src="{% static 'images/icon/m6.webp' %}" alt="icon">Accessories</a>
+                                </li>
+                                <!-- Menu Accordion-->
+                                <li class=" rx-child"><a href="#"><img src="{% static 'images/icon/m7.webp' %}"
+                                            alt="icon">Destop</a></li>
+                                <li class=" rx-child"><a href="#">Shop All</a></li>
+                                <li class=" rx-parent">
+                                    <a class="rx-default"><img src="{% static 'images/icon/m8.webp' %}" alt="icon">More
+                                        categories</a>
+                                    <a class="rx-show"><img src="{% static 'images/icon/m9.webp' %}" alt="icon">close
+                                        menu</a>
+                                </li>
+                                <!-- End Menu Accordion-->
+                            </ul>
+                        </div>
+                    </div><!-- End Category Menu -->
+                </div>
+                <div class="col-lg-9">
+                    <!-- Manin Menu -->
+                    <div class="main-menu d-none d-lg-block">
+                        <nav>
+                            <ul>
+                                <li><a href="{% url 'index' %}" class="active">{% translate "Home" %}</a>
+                                    <!-- Sub Menu -->
+                                </li>
+                                <li><a href="{% url 'contact' %}">{% translate 'Contact Us' %}</a></li>
+                                <li><a href="{% url 'blog' %}">{% translate 'Blog' %}</a></li>
+                                <li><a href="{% url 'shop' %}">{% translate 'Shop All' %}</a></li>
+                                <li><a href="#" class="">{% translate 'Pages' %}</a>
+                                    <!-- Sub Menu -->
+                                    <ul class="sub-menu sub-menu-pages">
+                                        <li><a href="{% url 'blog' %}">{% translate 'Blog' %}</a></li>
+                                        <li><a href="{% url 'cart' %}">{% translate 'Cart' %}</a></li>
+                                        <li><a href="{% url 'checkout' %}">{% translate 'Checkout' %}</a></li>
+                                        <li><a href="{% url 'contact' %}">{% translate 'Contact' %}</a></li>
+                                        <li><a href="{% url 'shop' %}">{% translate 'Shop' %}</a></li>
+                                        <li><a href="{% url 'login' %}">{% translate 'My Account' %}</a></li>
+                                        <li><a href="{% url 'wishlist' %}">{% translate 'Wishlist' %}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div><!-- End Manin Menu -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <div class="footer-area">
+        <!-- Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Block Subscribe -->
+                        <div class="block-subscribe">
+                            <div class="subscribe-title">
+                                <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                                <h3>{% translate 'Send Newsletter' %}</h3>
+                            </div>
+                            <div class="subscribe-form">
+                                <form method="POST" name="subscriber" action="#">
+                                    {% csrf_token %}
+                                    {% if subscriber_form.email.errors %}
+                                    <div class="alert alert-danger">
+                                        {{ subscriber_form.email.errors }}
+                                    </div>
+                                    {% endif %}
+                                    <div class="subscribe-input-box">
+                                        {{ subscriber_form.email }}
+                                    </div>
+                                    <div class="subscribe-action">
+                                        <button title="Subscribe" type="submit">{% translate 'Subscribe' %}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- End Block Subscribe -->
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Social Footer -->
+                        <div class="social-footer">
+                            <ul class="link-follow">
+                                <li class="first">
+                                    <a href="#" class="facebook fa fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter fa fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="google fa fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="instagram fa fa-instagram"></a>
+                                </li>
+                            </ul>
+                        </div><!-- End Social Footer -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Footer Top -->
+        <!-- Footer Static -->
+        <div class="footer-static">
+            <div class="container">
+                <div class="footer-bottom-wrap">
+                    <!-- Single Footer Static -->
+                    <div class="single-footer-static static-info">
+                        <div class="footer-static-title">
+                            <h3>{% translate 'Information' %}</h3>
+                        </div>
+                        <div class="footer-static-content">
+                            <ul>
+                                <li><a href="#">{% translate 'About us' %}</a></li>
+                                <li><a href="#">{% translate 'Blog' %}</a></li>
+                                <li><a href="#">{% translate 'Terms of Use' %}</a></li>
+                                <li><a href="#">{% translate 'Privacy Policy' %}</a></li>
+                                <li><a href="#">{% translate 'Site Map' %}</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- End Single Footer Static -->
+                    <!-- Single Footer Static -->
+                    <div class="single-footer-static">
+                        <div class="footer-static-title">
+                            <h3>{% translate 'Customer service' %}</h3>
+                        </div>
+                        <div class="footer-static-content">
+                            <ul>
+                                <li><a href="#">{% translate 'Shipping Policy' %}</a></li>
+                                <li><a href="#">{% translate 'Compensation First' %}</a></li>
+                                <li><a href="#">{% translate 'My Account' %}</a></li>
+                                <li><a href="#">{% translate 'Return Policy' %}</a></li>
+                                <li><a href="#">{% translate 'Contact Us' %}</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- End Single Footer Static -->
+                    <!-- Single Footer Static -->
+                    <div class="single-footer-static static-shipping">
+                        <div class="footer-static-title">
+                            <h3>{% translate 'Payment & Shipping' %}</h3>
+                        </div>
+                        <div class="footer-static-content">
+                            <ul>
+                                <li><a href="#">{% translate 'Terms of Use' %}</a></li>
+                                <li><a href="#">{% translate 'Payment Methods' %}</a></li>
+                                <li><a href="#">{% translate 'Shipping Guide' %}</a></li>
+                                <li><a href="#">{% translate 'Locations We Ship To' %}</a></li>
+                                <li><a href="#">{% translate 'Estimated Delivery Time' %}</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- End Single Footer Static -->
+                    <!-- Single Footer Static -->
+                    <div class="single-footer-static static-account">
+                        <div class="footer-static-title">
+                            <h3>{% translate 'My Account' %}</h3>
+                        </div>
+                        <div class="footer-static-content">
+                            <ul>
+                                <li><a href="#">{% translate 'My Addresses' %}</a></li>
+                                <li><a href="#">{% translate 'Gift Vouchers' %}</a></li>
+                                <li><a href="#">{% translate 'Returns and Exchanges' %}</a></li>
+                                <li><a href="#">{% translate 'Shipping Options' %}</a></li>
+                                <li><a href="#">{% translate 'My personal info' %}</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- End Single Footer Static -->
+                    <!-- Single Footer Static -->
+                    <div class="single-footer-static static-contact">
+                        <div class="footer-static-title">
+                            <h3>{% translate 'Contact Us' %}</h3>
+                        </div>
+                        <div class="footer-static-content">
+                            <div class="contact-info">
+                                <p class="phone">{% translate 'Phone:' %} 01737803547</p>
+                                <p class="email">{% translate 'Email:' %} admin@bootexperts.com</p>
+                                <p class="adress">{% translate 'Address:' %} No. 96, Jecica City, NJ 07305, New York, USA</p>
+                            </div>
+                        </div>
+                    </div><!-- End Single Footer Static -->
+                </div>
+            </div>
+        </div><!-- End Footer Static -->
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Copyright -->
+                        <div class="copyright">
+                            <p>&copy; 2021 <span> Selphy </span> Made with <i class="fa fa-heart"></i> by <a
+                                    href="https://hasthemes.com/">HasThemes</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Footer Payment -->
+                        <div class="footer-payment">
+                            <a href="#"><img src="{% static 'images/logo/payment.webp' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Footer Bottom -->
+    </div><!-- End Footer Area -->
+
+    <!-- Modernizer & jQuery JS -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins JS -->
+    <script src="{% static 'js/jquery.nivo.slider.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.mainmenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery-price-slider.js' %}"></script>
+    <script src="{% static 'js/jquery.simpleGallery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.simpleLens.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/dbclick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

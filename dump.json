@@ -1,0 +1,1352 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2023-06-20T17:03:26.305Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "Salam",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2023-06-20T17:04:00.699Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "Salam",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2023-07-04T09:35:26.167Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2023-07-04T09:58:07.477Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2023-07-04T09:58:50.303Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Color of your product\", \"Size of your product\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2023-07-04T10:01:56.373Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2023-07-04T11:04:35.910Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2023-07-04T11:04:47.642Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2023-07-04T11:06:51.408Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2023-07-04T11:08:09.826Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "5",
+            "object_repr": "Pellentesque Habitan",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2023-07-04T11:30:54.221Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "5",
+            "object_repr": "Pellentesque Habitan",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2023-07-04T11:31:01.487Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2023-07-04T11:31:35.117Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2023-07-04T11:32:25.592Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "7",
+            "object_repr": "Pellentesque Habitant",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2023-07-04T11:32:32.770Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "7",
+            "object_repr": "Pellentesque Habitant",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Availability\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2023-07-04T11:35:30.938Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "8",
+            "object_repr": "Voluptas Nulla",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2023-07-04T14:48:27.197Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image for your product\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2023-07-04T14:55:25.262Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image for your product\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2023-07-06T14:43:26.968Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "8",
+            "object_repr": "Voluptas Nulla",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2023-07-06T14:43:31.518Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "7",
+            "object_repr": "Pellentesque Habitant",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2023-07-06T14:43:45.573Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2023-07-06T14:45:31.558Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "40",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2023-07-06T14:45:45.186Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "40",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image for your product\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2023-07-06T15:11:55.968Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "41",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2023-07-06T15:12:47.636Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "41",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2023-07-06T15:14:17.125Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "42",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2023-07-06T15:23:05.219Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "42",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 58,
+        "fields": {
+            "action_time": "2023-07-06T15:28:57.577Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "43",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 59,
+        "fields": {
+            "action_time": "2023-07-06T15:31:38.692Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "44",
+            "object_repr": "Fusce Aliquam",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 60,
+        "fields": {
+            "action_time": "2023-07-06T15:38:20.599Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "44",
+            "object_repr": "Fusce Aliquam",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 61,
+        "fields": {
+            "action_time": "2023-07-06T15:38:25.749Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "43",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 62,
+        "fields": {
+            "action_time": "2023-07-06T15:47:38.217Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "45",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 63,
+        "fields": {
+            "action_time": "2023-07-06T15:52:37.035Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "46",
+            "object_repr": "Fusce Aliquam",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 64,
+        "fields": {
+            "action_time": "2023-07-06T15:53:37.797Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "47",
+            "object_repr": "Pellentesque Habitant",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 65,
+        "fields": {
+            "action_time": "2023-07-06T15:55:12.521Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "48",
+            "object_repr": "Quisque In Arcu",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 66,
+        "fields": {
+            "action_time": "2023-07-06T15:56:46.649Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "49",
+            "object_repr": "Voluptas Nulla",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 67,
+        "fields": {
+            "action_time": "2023-07-06T15:57:50.549Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "50",
+            "object_repr": "Etiam Gravida",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 68,
+        "fields": {
+            "action_time": "2023-07-06T15:58:56.302Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "51",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 69,
+        "fields": {
+            "action_time": "2023-07-06T16:00:19.266Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "52",
+            "object_repr": "Proin Lectus Ipsum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 70,
+        "fields": {
+            "action_time": "2023-07-06T16:01:26.807Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "53",
+            "object_repr": "Cras Neque Metus",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 71,
+        "fields": {
+            "action_time": "2023-07-06T16:02:25.482Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "54",
+            "object_repr": "Fusce Aliquam",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 72,
+        "fields": {
+            "action_time": "2023-07-06T16:03:29.885Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "55",
+            "object_repr": "Donec Ac Tempus",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 73,
+        "fields": {
+            "action_time": "2023-07-08T06:49:50.545Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "45",
+            "object_repr": "Aliquam Consequat",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 74,
+        "fields": {
+            "action_time": "2023-07-11T14:43:06.062Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 75,
+        "fields": {
+            "action_time": "2023-07-11T14:50:17.818Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 76,
+        "fields": {
+            "action_time": "2023-07-11T15:03:51.591Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 77,
+        "fields": {
+            "action_time": "2023-07-11T15:05:48.400Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 78,
+        "fields": {
+            "action_time": "2023-07-11T15:06:59.840Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 79,
+        "fields": {
+            "action_time": "2023-07-11T15:07:56.465Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "Claritas est etiam processus dynamicus, qui sequitur",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 80,
+        "fields": {
+            "action_time": "2023-07-13T15:32:39.889Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Lacuada",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 81,
+        "fields": {
+            "action_time": "2023-07-16T14:13:02.686Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "56",
+            "object_repr": "qwertyuiop",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 82,
+        "fields": {
+            "action_time": "2023-07-16T14:13:19.372Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "56",
+            "object_repr": "qwertyuiop",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add Blog",
+            "content_type": 7,
+            "codename": "add_blog"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change Blog",
+            "content_type": 7,
+            "codename": "change_blog"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete Blog",
+            "content_type": 7,
+            "codename": "delete_blog"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view Blog",
+            "content_type": 7,
+            "codename": "view_blog"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add product",
+            "content_type": 8,
+            "codename": "add_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change product",
+            "content_type": 8,
+            "codename": "change_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete product",
+            "content_type": 8,
+            "codename": "delete_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view product",
+            "content_type": 8,
+            "codename": "view_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add testmonial",
+            "content_type": 9,
+            "codename": "add_testmonial"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change testmonial",
+            "content_type": 9,
+            "codename": "change_testmonial"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete testmonial",
+            "content_type": 9,
+            "codename": "delete_testmonial"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view testmonial",
+            "content_type": 9,
+            "codename": "view_testmonial"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "blog",
+            "model": "blog"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "shop",
+            "model": "product"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "core",
+            "model": "testmonial"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ejij2wfbf0rnetqaraz6bvmv9oa85p3u",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hBmpAVcuu8ZyACDVA0kpV0Z765NutDtf-_9l_C0rcVvnRc_J3ERIE6_W6D44LqDdKd6azK2ui5zkLsiD9rl1BI_r4f7d1Col2-tDBIohY6sZUg6ZlRkhkjnwEHbARI4coHGzOwMGosqIGAyo9I5RxDvD9hvN7w:1qHQCN:FGmp5wHleUuR7vEAkT1abqe6H3IH88A4Ldiwqj7a43Y",
+            "expire_date": "2023-07-20T14:43:11.664Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "zbslm6jcn2s2hsb33rim0vf4kqgj19o6",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hBmpAVcuu8ZyACDVA0kpV0Z765NutDtf-_9l_C0rcVvnRc_J3ERIE6_W6D44LqDdKd6azK2ui5zkLsiD9rl1BI_r4f7d1Col2-tDBIohY6sZUg6ZlRkhkjnwEHbARI4coHGzOwMGosqIGAyo9I5RxDvD9hvN7w:1qBdmU:pVKbnLw3oUUDuZBj2Y7fHMzAM1pzaQ8aC5v_r7MFDK0",
+            "expire_date": "2023-07-04T16:00:34.388Z"
+        }
+    },
+    {
+        "model": "blog.blog",
+        "pk": 2,
+        "fields": {
+            "created": "2023-07-11T14:50:17.805Z",
+            "updated": "2023-07-11T14:50:17.805Z",
+            "title": "Claritas est etiam processus dynamicus, qui sequitur",
+            "image": "b12.webp",
+            "author": "BootExperts Themes",
+            "category": "Dreeses",
+            "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit.\r\n\r\nAliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.\r\n\r\nAenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.\r\n\r\nSuspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.",
+            "date": "Friday, November 6, 2015"
+        }
+    },
+    {
+        "model": "blog.blog",
+        "pk": 3,
+        "fields": {
+            "created": "2023-07-11T15:03:51.585Z",
+            "updated": "2023-07-11T15:03:51.585Z",
+            "title": "Claritas est etiam processus dynamicus, qui sequitur",
+            "image": "b13.webp",
+            "author": "BootExperts Themes",
+            "category": "Clothing",
+            "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit.\r\n\r\nAliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.\r\n\r\n\r\nAenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.\r\n\r\nSuspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.",
+            "date": "Friday, November 6, 2015"
+        }
+    },
+    {
+        "model": "blog.blog",
+        "pk": 4,
+        "fields": {
+            "created": "2023-07-11T15:05:48.390Z",
+            "updated": "2023-07-11T15:05:48.390Z",
+            "title": "Claritas est etiam processus dynamicus, qui sequitur",
+            "image": "b14.webp",
+            "author": "BootExperts Themes",
+            "category": "Handbages",
+            "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit.\r\n\r\nAliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.\r\n\r\n\r\nAenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.\r\n\r\nSuspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.",
+            "date": "Friday, November 6, 2015"
+        }
+    },
+    {
+        "model": "blog.blog",
+        "pk": 5,
+        "fields": {
+            "created": "2023-07-11T15:06:59.834Z",
+            "updated": "2023-07-11T15:06:59.834Z",
+            "title": "Claritas est etiam processus dynamicus, qui sequitur",
+            "image": "b15.webp",
+            "author": "BootExperts Themes",
+            "category": "Shoes",
+            "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit.\r\n\r\nAliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.\r\n\r\nAenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.\r\n\r\nSuspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.",
+            "date": "Friday, November 6, 2015"
+        }
+    },
+    {
+        "model": "blog.blog",
+        "pk": 6,
+        "fields": {
+            "created": "2023-07-11T15:07:56.457Z",
+            "updated": "2023-07-11T15:07:56.457Z",
+            "title": "Claritas est etiam processus dynamicus, qui sequitur",
+            "image": "b16.webp",
+            "author": "BootExperts Themes",
+            "category": "Dreeses",
+            "desc": "Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit.\r\n\r\nAliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.\r\n\r\nAenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.\r\n\r\nSuspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.",
+            "date": "Friday, November 6, 2015"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 40,
+        "fields": {
+            "created": "2023-07-06T14:45:31.550Z",
+            "updated": "2023-07-06T14:45:45.179Z",
+            "title": "Proin Lectus Ipsum",
+            "image": "product/images/1.webp",
+            "price": 155,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 45,
+        "fields": {
+            "created": "2023-07-06T15:47:38.208Z",
+            "updated": "2023-07-08T06:49:50.536Z",
+            "title": "Aliquam Consequat",
+            "image": "product/images/s2_1.webp",
+            "price": 200,
+            "desc": "Proin Lectus Ipsum\r\n    \r\n1 Review(s) | Add Your ReviewAvailability: In stockNunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 46,
+        "fields": {
+            "created": "2023-07-06T15:52:37.028Z",
+            "updated": "2023-07-06T15:52:37.028Z",
+            "title": "Fusce Aliquam",
+            "image": "product/images/s3_XsfW3Ra.webp",
+            "price": 99,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 47,
+        "fields": {
+            "created": "2023-07-06T15:53:37.790Z",
+            "updated": "2023-07-06T15:53:37.790Z",
+            "title": "Pellentesque Habitant",
+            "image": "product/images/s4.webp",
+            "price": 99,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 48,
+        "fields": {
+            "created": "2023-07-06T15:55:12.512Z",
+            "updated": "2023-07-06T15:55:12.512Z",
+            "title": "Quisque In Arcu",
+            "image": "product/images/s5.webp",
+            "price": 99,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 49,
+        "fields": {
+            "created": "2023-07-06T15:56:46.642Z",
+            "updated": "2023-07-06T15:56:46.642Z",
+            "title": "Voluptas Nulla",
+            "image": "product/images/s7.webp",
+            "price": 132,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 50,
+        "fields": {
+            "created": "2023-07-06T15:57:50.539Z",
+            "updated": "2023-07-06T15:57:50.539Z",
+            "title": "Etiam Gravida",
+            "image": "product/images/s3_DoC4bAo.webp",
+            "price": 99,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 51,
+        "fields": {
+            "created": "2023-07-06T15:58:56.294Z",
+            "updated": "2023-07-06T15:58:56.295Z",
+            "title": "Proin Lectus Ipsum",
+            "image": "product/images/s8.webp",
+            "price": 99,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 52,
+        "fields": {
+            "created": "2023-07-06T16:00:19.258Z",
+            "updated": "2023-07-06T16:00:19.258Z",
+            "title": "Proin Lectus Ipsum",
+            "image": "product/images/s9.webp",
+            "price": 99,
+            "desc": "Proin Lectus Ipsum\r\n    \r\n1 Review(s) | Add Your ReviewAvailability: In stockNunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 53,
+        "fields": {
+            "created": "2023-07-06T16:01:26.798Z",
+            "updated": "2023-07-06T16:01:26.798Z",
+            "title": "Cras Neque Metus",
+            "image": "product/images/s7_77MOBST.webp",
+            "price": 99,
+            "desc": "Review(s) | Add Your ReviewAvailability: In stockNunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 54,
+        "fields": {
+            "created": "2023-07-06T16:02:25.473Z",
+            "updated": "2023-07-06T16:02:25.473Z",
+            "title": "Fusce Aliquam",
+            "image": "product/images/s5_VScQvuq.webp",
+            "price": 125,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": 55,
+        "fields": {
+            "created": "2023-07-06T16:03:29.876Z",
+            "updated": "2023-07-06T16:03:29.876Z",
+            "title": "Donec Ac Tempus",
+            "image": "product/images/s2_1_ygKWkG7.webp",
+            "price": 99,
+            "desc": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti",
+            "color": 0,
+            "size": 0,
+            "availability": true
+        }
+    },
+    {
+        "model": "core.testmonial",
+        "pk": 1,
+        "fields": {
+            "created": "2023-07-13T15:32:39.858Z",
+            "updated": "2023-07-13T15:32:39.858Z",
+            "images": "client.webp",
+            "desc": "Fusce ornare bibendum suscipit. Phasellus eget sem non erat consequat mattis at ut sapien. Fusce rhoncus egestas purus, id ullamcorper felis mattis sed. Phasellus eget sem non erat consequat mattis at ut sapien. Fusce rhoncus egestas purus, id ullamcorper felis mattis sed.",
+            "name": "Lacuada",
+            "date": "January 19, 2016"
+        }
+    }
+]

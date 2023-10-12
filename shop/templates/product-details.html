@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+		<!-- End Header Area -->
+
+		<!-- Main Menu Area -->
+		<!-- End Main Menu Area -->
+		<!-- Breadcurb Area -->
+		<div class="breadcurb-area">
+			<div class="container">
+				<ul class="breadcrumb">
+					<li class="home"><a href="{% url 'index' %}">Home</a></li>
+				</ul>
+			</div>
+		</div><!-- End Breadcurb Area -->
+		<!-- Single Product details Area -->
+		<div class="single-product-detaisl-area">
+			<!-- Single Product View Area -->
+			<div class="single-product-view-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5">
+							<!-- Single Product View -->
+							<div class="single-procuct-view">
+								<!-- Simple Lence Gallery Container -->
+								<div class="simpleLens-gallery-container" id="p-view">
+									<div class="simpleLens-container tab-content">
+										<div class="tab-pane active" id="p-view-1">
+											<div class="simpleLens-big-image-container">
+												<a class="simpleLens-lens-image" data-lens-image="assets/images/products/single-product/large/1.webp">
+													<img src="{{product.cover_image.url}}" class="simpleLens-big-image" alt="productd">
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="p-view-2">
+										<div style="display: flex;" class="simpleLens-big-image-container">
+											{% for image in product.images.all %}
+											<a class="simpleLens-lens-image" data-lens-image="{{image.url}}">
+												<img src="{{image.image.url}}" class="simpleLens-big-image" alt="productd">
+											</a>
+											{% endfor %}
+										</div>
+									</div>
+									<!-- Simple Lence Thumbnail -->
+									<div class="simpleLens-thumbnails-container">
+										<div id="single-product" class="owl-carousel custom-carousel">
+											<ul class="nav nav-tabs" role="tablist">
+												<li><a class="active" href="#p-view-1" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/1.webp' %}" alt="productd"></a></li>
+												<li class=""><a href="#p-view-2" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/2.webp' %}" alt="productd"></a></li>
+												<li class="last-li"><a href="#p-view-3" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/3.webp' %}" alt="productd"></a></li>
+												<li class="d-none d-xl-block"><a href="#p-view-4" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/4.webp' %}" alt="productd"></a></li>
+											</ul>
+											<ul class="nav nav-tabs" role="tablist">
+												<li class=""><a class="active" href="#p-view-5" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/1.webp' %}"alt="productd"></a></li>
+												<li class=""><a href="#p-view-6" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/2.webp' %}"alt="productd"></a></li>
+												<li class="last-li"><a href="#p-view-7" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/3.webp' %}"alt="productd"></a></li>
+												<li class="d-none d-xl-block"><a href="#p-view-8" role="tab" data-bs-toggle="tab"><img src="{% static 'images/products/single-product/thumbnail/4.webp' %}" alt="productd"></a></li>
+											</ul>
+										</div>
+									</div><!-- End Simple Lence Thumbnail -->
+								</div><!-- End Simple Lence Gallery Container -->
+							</div><!-- End Single Product View -->
+						</div>
+						<div class="col-lg-7">
+							<!-- Single Product Content View -->
+							<div class="single-product-content-view">
+								<div class="product-info">
+									<h1>{{ product.product.title }}</h1>
+									<p class="availability in-stock">Availability: {{product.product.availability}}<span></span></p>
+									<div class="quick-desc">
+										{{product.product.desc}}
+									</div>
+									<div class="price-box">
+										<p class="price"><span class="special-price"><span class="amount">$ {{ product.product.price }}</span></span></p>
+									</div>
+								</div><!-- End product-info -->
+								<!-- Add to Box -->
+								<div class="add-to-box add-to-box2">
+									<div class="actions-inner">
+										<ul class="add-to-links">
+											<li><a class="link-wishlist" title="Add to Wishlist" href=""><i class="fa fa-star"></i></a></li>
+										</ul>
+									</div>
+									<div class="product-select product-color">
+										<h2>Color <sup>*</sup></h2>
+										<select onchange="window.location.href=this.value;">
+											<option>--Please Select--</option>
+											{% for color in colors %}
+												<option value="/shop/productdetails/{{ color.pk }}/">{{color.color}}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<div class="quick-add-to-cart">
+										<form method="post" class="cart">
+											<div class="qty-button"> 	
+												<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+												
+												<div class="box-icon button-plus"> 
+													<input type="button" class="qty-increase " onclick="var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty )) qty_el.value++;return false;" value="+">
+												</div>	
+												<div class="box-icon button-minus">
+													<input type="button" class="qty-decrease" onclick="var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) qty_el.value--;return false;" value="-">
+												</div>
+											</div>
+											<div class="product-actions">
+												<button class="button btn-cart" title="Add to Cart" type="button"><a href='' class="fa fa-shopping-cart">&nbsp;</a><span>Add to Cart</span></button>
+											</div>
+										</form>
+									</div>
+								</div><!-- End Add to Box -->
+								<!-- Social Shiring -->
+								<div class="social-sharing">
+									<a href="#"><img src="{% static 'images/icon/social.webp' %}" alt="social"></a>
+								</div><!-- End Social Shiring -->
+							</div><!-- End Single Product Content View -->
+						</div>
+					</div>
+				</div>
+			</div><!-- End Single Product View Area -->
+			<!-- Single Description Tab -->
+			<div class="single-product-description">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="product-description-tab custom-tab">
+								<!-- tab bar -->
+								<ul class="nav nav-tabs" role="tablist">
+									<li><a class="active" href="#product-des" data-bs-toggle="tab">Product Description</a></li>
+									<li><a href="#product-rev" data-bs-toggle="tab">Reviews</a></li>
+									<li><a href="#product-tag" data-bs-toggle="tab">Product Tags</a></li>
+								</ul>
+								<!-- Tab Content -->
+								<div class="tab-content">
+									<div class="tab-pane active" id="product-des">
+										<p>{{ product.product.desc }}</p>
+									</div>
+									<div class="tab-pane" id="product-rev">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="product-rev-left">
+													{% if not reviews  %}
+														<p>Not review added yet...</p>
+													{% else %}
+													{% for review in reviews.all %}
+													<p class="product-action">
+														{{review.review}}
+													</p>
+													<div class="product-ratting">
+														<table class="">
+															<tr>
+																<td>Quality</td>
+																<td><div class="rating-box">
+																	<div class="rating" style="width: {{ review.get_quality_review_display }}%;"></div>
+																  </div></td>
+															</tr>
+															<tr>
+																<td>Price</td>
+																<td><div class="rating-box">
+																	<div class="rating" style="width: {{ review.get_price_review_display }}%;"></div>
+																  </div></td>
+															</tr>
+															<tr>
+																<td>Value</td>
+																<td><div class="rating-box">
+																	<div class="rating" style="width: {{ review.get_value_review_display }}%;"></div>
+																  </div></td>
+															</tr>
+														</table>
+													</div>
+													<p> Review by <b> {{review.nickname}} </b> <br> <span class="posted">{{review.date_added}}</span></p>
+													{% endfor %}
+													{% endif %}
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="product-rev-right">
+													<h3>You're reviewing: {{ product.title }}</h3>
+													<h3><b>How do you rate this product? <span>*</span></b></h3>
+													<form method="POST">
+														<div class="product-rev-right-table table-responsive">
+															<table>
+																<thead>
+																	<tr class="first last">
+																		<th>&nbsp;</th>
+																		<th><span class="nobr">1 stars</span></th>
+																		<th><span class="nobr">2 stars</span></th>
+																		<th><span class="nobr">3 stars</span></th>
+																		<th><span class="nobr">4 stars</span></th>
+																		<th><span class="nobr">5 stars</span></th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<th>Quality</th>
+																		<th><input type="radio" class="radio" name="quality_review" value="1"></th>
+																		<th><input type="radio" class="radio" name="quality_review" value="2"></th>
+																		<th><input type="radio" class="radio" name="quality_review" value="3"></th>
+																		<th><input type="radio" class="radio" name="quality_review" value="4"></th>
+																		<th><input type="radio" class="radio" name="quality_review" value="5"></th>
+																	</tr>
+																	<tr>
+																		<th>Price</th>
+																		<th><input type="radio" class="radio" name="price_review" value="1"></th>
+																		<th><input type="radio" class="radio" name="price_review" value="2"></th>
+																		<th><input type="radio" class="radio" name="price_review" value="3"></th>
+																		<th><input type="radio" class="radio" name="price_review" value="4"></th>
+																		<th><input type="radio" class="radio" name="price_review" value="5"></th>
+																	</tr>
+																	<tr>
+																		<th>Value</th>
+																		<th><input type="radio" class="radio" name="value_review" value="1"></th>
+																		<th><input type="radio" class="radio" name="value_review" value="2"></th>
+																		<th><input type="radio" class="radio" name="value_review" value="3"></th>
+																		<th><input type="radio" class="radio" name="value_review" value="4"></th>
+																		<th><input type="radio" class="radio" name="value_review" value="5"></th>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div class="porduct-rev-right-form">
+																{% csrf_token %}
+																<div class="form-group">
+																	<label>Name <sup></sup></label>
+																	{{ form.nickname }}
+																</div>
+																<div class="form-group">
+																	<label>Review <sup></sup></label>
+																	{{ form.review }}
+																</div>
+																<div class="form-group form-group-button">
+																	<button class="btn custom-button" type="submit" value="Post Review">Submit Review</button>
+																</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="product-tag">
+										{% for tag in product.product.tag.all %}
+										<p>{{ tag }}</p>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- End Single Description Tab -->
+			<!-- Product Area -->
+			<div class="product-area ">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<!-- Product View Area -->
+						</div>
+					</div>
+				</div>
+			</div><!-- End Product Area -->
+		</div><!-- End Single Product details Area -->
+		<!-- Brand Area -->
+		<div class="brand-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="brand-add">
+							<a href="#"><img src="{% static 'images/brand-logo/bl5.webp' %}" alt="brand-logo"></a>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<!-- Brand Logo -->
+						<div class="brand-logo">
+							<div id="logo-carousel" class="owl-carousel">
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}"  alt="brand-logo"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End Brand Area -->	
+		
+		<!-- Footer Area -->
+	
+
+    </body>
+
+<!-- Mirrored from htmldemo.net/selphy/selphy/product-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Jun 2023 15:06:29 GMT -->
+</html>
+{% endblock %}

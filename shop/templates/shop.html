@@ -1,0 +1,370 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<style>
+	.pagination {
+	  display: inline-block;
+	}
+	
+	.pagination a {
+	  color: black;
+	  float: left;
+	  padding: 8px 16px;
+	  text-decoration: none;
+	  transition: background-color .3s;
+	  border: 1px solid #ddd;
+	}
+	
+	.pagination a.active {
+	  background-color: #0091D5;
+	  color: white;
+	  border: 1px solid #0091D5;
+	}
+	
+	.pagination a:hover:not(.active) {background-color: #ddd;}
+	</style>
+
+
+		<!-- End Header Area -->
+
+		<!-- Main Menu Area -->
+		<!-- End Main Menu Area -->
+		<!-- Breadcurb Area -->
+		<div class="breadcurb-area">
+			<div class="container">
+				<ul class="breadcrumb">
+					<li class="home"><a href="{% url 'index' %}">Home</a></li>
+				</ul>
+			</div>
+		</div><!-- End Breadcurb Area -->
+		<!-- Shop Product Area -->
+		<div class="shop-product-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<!-- Left Sidebar-->
+						<div class="left-sidebar">
+							<div class="left-sidebar-title">
+								<h2>{% translate 'Shop By' %}</h2>
+							</div>
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Category' %}</h2>
+								</div>
+								<div class="layout-list">
+									<ul>
+										{% for category in category %}
+										<li><a href="/shop/shop?category={{ category.id }}">{{ category.name }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div><!-- End Shop Layout Area -->
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Manufacturer' %}</h2>
+								</div>
+								<div class="layout-list">
+									<ul>
+										<li><a href='{% url "shop" %}'>All</a></li>
+										{% for a in manufacturer %}
+										<li><a href="/shop/shop?manufacturer={{ a.id }}" value="{{ a.id }}">{{ a.name }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div><!-- End Shop Layout Area -->
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Color' %}</h2>
+								</div>
+								<div class="layout-list">
+									<ul>
+										{% for b in color %}
+										<li><a href="/shop/shop?color={{ b.id }}">{{ b.name }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div><!-- End Shop Layout -->
+							<!-- Shop Layout Banner -->
+							<div class="shop-layout-banner single-banner">
+								<a href="#">
+									<img alt="banner" src="{% static 'images/banner/banner1.webp' %}">
+								</a>
+							</div><!-- End Shop Layout Banner -->
+							<!-- Popular Tag Area -->
+							<div class="popular-tag-area">
+								<div class="tag-title">
+									<h2>{% translate 'Popular Tags' %}</h2>
+								</div>
+								<!-- Shop Layout -->
+								<div class="shop-layout">
+									<div class="popular-tag">
+										<div class="tag-list">
+											{% for tag in tag %}
+											<ul>
+												<li><a href="/shop/shop?tag={{tag.id}}" value="{{ tag.id }}">{{ tag.name }}</a></li>
+											</ul>
+											{% endfor %}
+										</div>
+									</div>
+								</div><!-- End Shop Layout -->
+							</div><!-- End Popular Tag Area -->
+						</div><!-- End Left Sidebar -->
+					</div>
+					<div class="col-lg-9 col-md-12">
+						<!-- Shop Product View -->
+						<div class="shop-product-view">
+							<!-- Shop Category Image -->
+							<div class="shop-category-image">
+								<img src="{% static 'images/banner/banner-grid.webp' %}" alt="banner">
+							</div>
+							<!-- Shop Product Tab Area -->
+							<div class="product-tab-area">
+								<!-- Tab Bar -->
+								<div class="tab-bar">
+									<div class="tab-bar-inner">
+										<ul class="nav nav-tabs" role="tablist">
+											<li><a class="active" href="#shop-product" data-bs-toggle="tab"><i class="fa fa-th-large"></i></a></li>
+											<li><a href="#shop-list" data-bs-toggle="tab"><i class="fa fa-th-list"></i></a></li>
+										</ul>
+									</div>
+										
+								</div>
+								</div><!-- End Tab Bar -->
+								<!-- Tab Content -->
+								
+
+								<div class="tab-content">
+									<!-- Shop Product-->
+									<div class="tab-pane active" id="shop-product">
+										<div class="tab-single-product">
+											{% for a in page_number %}
+											<!-- Single Product -->
+											<div class="singel-product single-product-col">
+												<!-- <div class="label-pro-new">New</div> -->
+												<!-- Single Product Image -->
+												<div class="single-product-img">
+													<a href="{% url 'product_details' pk=a.id %}"><img src="{{ a.cover_image.url }}" alt="product"></a>
+												</div>
+												<!-- Single Product Content -->
+												<div class="single-product-content">
+													<h2 class="product-name"><a title="Proin lectus ipsum" href="{% url 'product_details' pk=a.id %}">{{a.product.title}}</a></h2>
+													<div class="ratings">
+														<div class="rating-box">  
+															<div class="rating">
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+															</div>  
+														</div>
+													</div>
+													<div class="product-price">
+														<p>{{a.product.price}} $</p>
+													</div>
+													<!-- Single Product Actions -->
+													<div class="product-actions">
+														<a href="{% url 'add_to_cart' a.pk %}"><button class="button btn-cart" title="Add to Cart" type="button"><i class="fa fa-shopping-cart">&nbsp;</i><span>Add to Cart</span></button></a>
+														<div class="add-to-link">
+															<ul class="">
+																<li class="quic-view"><button type="button" data-bs-target="#productModal" data-bs-toggle="modal"><i class="fa fa-search"></i>Quick view</button></li>
+																<li class="wishlist"><a href="{% url 'wishlist_view' a.pk %}"><i class="fa fa-heart"></i></a></li>
+															</ul>
+														</div>
+													</div><!-- End Single Product Actions -->
+												</div><!-- End Single Product Content -->
+											</div><!-- End Single Product -->
+											{% endfor %}
+										</div><!-- End Tab Single Product-->
+									</div>
+									<!-- End Shop Product-->
+									<!-- Shop List -->
+									<div class="tab-pane" id="shop-list">
+										<!-- Single Shop -->
+										{% for b in page_number %}
+										<div class="single-shop single-product">
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-5">
+													<div class="single-product-img">
+														<a href="{% url 'product_details' pk=b.id %}"><img src="{{b.cover_image.url}}" alt="product"></a>
+														<div class="add-to-link">
+															<ul class="">
+																<li class="quic-view"><button data-bs-toggle="modal" data-bs-target="#productModal" type="button"><i class="fa fa-search"></i>Quick view</button></li>
+																<li class="wishlist"><a href="#"><i class="fa fa-heart"></i></a></li>
+																<li class="refresh"><a href="#"><i class="fa fa-refresh"></i></a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-8 col-md-8 col-sm-7">
+													<div class="single-product-content">
+														<h2 class="product-name"><a href="{% url 'product_details' pk=b.id %}" title="Proin lectus ipsum">{{b.product.title}}</a></h2>
+														<div class="product-price">
+															<p>{{b.product.price}} $</p>
+														</div>
+														<div class="single-shop-details">
+															<p>{{b.product.desc|truncatewords:33}}</p>
+														</div>
+														<!-- Single Product Actions -->
+														<div class="product-actions">
+															<button type="button" title="Add to Cart" class="button btn-cart"><a href="{% url 'add_to_cart' b.pk %}" class="fa fa-shopping-cart">&nbsp;</a><span>Add to Cart</span></button>
+														</div><!-- End Single Product Actions -->
+													</div>
+												</div>
+											</div>
+										</div><!-- End Single Shop -->
+										{% endfor %}
+									</div>
+									<!-- End Shop List -->
+									
+									<div class="row mt-5">
+										<div class="col text-center">
+											<div class="pagination">
+												{% if page_number.has_previous %}
+												<a href="?page=1">&laquo; first</a>
+												<a href="?page={{ page_number.previous_page_number }}">previous</a>
+												{% endif %}									
+												<a href="#" class="active">{{ page_number.number }}</a>
+												{% if page_number.has_next %}
+												<a href="?page={{ page_number.next_page_number }}">next</a></li>
+												<a href="?page={{ page_number.paginator.num_pages }}">last &raquo;</a></li>
+												{% endif %}								
+											  </div>
+										</div>
+									  </div>
+								</div><!-- End Tab Bar -->
+							</div><!-- End Shop Product Tab Area -->
+						</div><!-- End Shop Product View -->
+					</div>
+				</div>
+			</div>
+				</div>
+			</div>
+		</div><!-- End Shop Product Area -->
+		<!-- Brand Area -->
+		<div class="brand-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="brand-add">
+							<a href="#"><img src="{% static 'images/brand-logo/bl5.webp' %}" alt="brand-logo"></a>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<!-- Brand Logo -->
+						<div class="brand-logo">
+							<div id="logo-carousel" class="owl-carousel">
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}"alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}" alt="brand-logo"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End Brand Area -->	
+		
+		<!-- Footer Area -->
+		
+		
+		<!-- Quickview Product -->
+		<div id="quickview-wrapper">
+			<!-- Modal -->
+			<div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						</div>
+						<div class="modal-body">
+							<div class="modal-product">
+								<div class="product-images">
+									<div class="main-image images">
+										<img alt="product" src="{{page_number.image.url}}">
+									</div>
+								</div><!-- End product-images -->
+								<div class="product-info">
+									<h1>{{page_number.title}}</h1>
+									<div class="ratings">
+										<div class="rating-box">  
+											<div class="rating">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+											</div>  
+										</div>
+									</div>
+									<p class="rating-links">
+										<a href="#">1 Review(s)</a>
+										<span class="separator">|</span>
+										<a href="#" class="add-to-review">Add Your Review</a>
+									</p>
+									<p class="availability in-stock">Availability: {{page_number.availability}}</p>
+									<div class="quick-desc">
+										{{page_number.desc}}
+									</div>
+									<div class="price-box">
+										<p class="price"><span class="special-price"><span class="amount">{{page_number.price}} $</span></span></p>
+									</div>
+									<div class="quick-add-to-cart">
+										<form method="post" class="cart">
+											<div class="qty-button"> 	
+												<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+												
+												<div class="box-icon button-plus"> 
+													<input type="button" class="qty-increase " onclick="var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty )) qty_el.value++;return false;" value="+">
+												</div>	
+												<div class="box-icon button-minus">
+													<input type="button" class="qty-decrease" onclick="var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) qty_el.value--;return false;" value="-">
+												</div>
+											</div>
+											<div class="product-actions">
+												<button class="button btn-cart" title="Add to Cart" type="button"><i class="fa fa-shopping-cart">&nbsp;</i><span>Add to Cart</span></button>
+											</div>
+										</form>
+									</div>
+									<div class="social-sharing">
+										<div class="widget widget_socialsharing_widget">
+											<h3 class="widget-title-modal">Share this product</h3>
+											<ul class="social-icons">
+												<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
+												<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
+												<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
+												<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
+												<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div><!-- End product-info -->
+							</div><!-- End modal-product -->
+						</div><!-- End modal-body -->
+					</div><!-- End modal-content -->
+				</div><!-- End modal-dialog -->
+			</div><!-- End Modal -->
+		</div><!-- End Quickview Product -->
+		{% endblock %}
+				
+		
+		
+		
+		
+		
+	<!-- JS
+    ============================================ -->
+
+    </body>
+
+<!-- Mirrored from htmldemo.net/selphy/selphy/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Jun 2023 15:05:59 GMT -->
+</html>

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+   .registerbtn {
+      background-color: #0091E1;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      opacity: 0.9;
+    }
+</style>
+    </head>
+    <body>
+            
+    <form method="POST">
+        {% csrf_token %}
+      <div class="container">
+        {% include 'messages.html' %}
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert"> 
+                <div id="form_errors">
+                    {% for key, value in form.errors.item %}
+                        <strong>{{ value }}</strong>
+                    {% endfor %}
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+    
+        <label for="email"><b>Email</b></label>
+        {{form.email}}
+    
+        <label for="psw"><b>Full name</b></label>
+        {{form.full_name}}
+    
+        <label for="psw-repeat"><b>Phone number</b></label>
+        {{form.phone_number}}
+
+        <label for="psw-repeat"><b>Password</b></label>
+        {{form.password1}}
+
+        <label for="psw-repeat"><b>Confirm Password</b></label>
+        {{form.password2}}
+        <hr>
+    
+        <button type="submit" class="registerbtn">Register</button>
+      </div>
+      
+      <div class="container signin">
+        <p>Already have an account? <a href="{% url 'login' %}">Sign in</a>.</p>
+      </div>
+    </form>
+    
+    </body>
+    </html>
+
+{% endblock %}

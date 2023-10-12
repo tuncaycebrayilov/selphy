@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<style>
+	.pagination {
+	  display: inline-block;
+	}
+	
+	.pagination a {
+	  color: black;
+	  float: left;
+	  padding: 8px 16px;
+	  text-decoration: none;
+	  transition: background-color .3s;
+	  border: 1px solid #ddd;
+	}
+	
+	.pagination a.active {
+	  background-color: #0091D5;
+	  color: white;
+	  border: 1px solid #0091D5;
+	}
+	
+	.pagination a:hover:not(.active) {background-color: #ddd;}
+	</style>
+		<!-- End Header Area -->
+
+		<!-- Main Menu Area -->
+	
+		<!-- End Main Menu Area -->
+		<!-- Breadcurb Area -->
+		<div class="breadcurb-area">
+			<div class="container">
+				<ul class="breadcrumb">
+					<li class="home"><a href="#">Home</a></li>
+					<li>Blog</li>
+				</ul>
+			</div>
+		</div><!-- End Breadcurb Area -->
+		<!-- Main Blog Post Area Area -->
+		<div class="main-blog-page blog-post-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<!-- Left Sidebar-->
+						<div class="left-sidebar">
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Category' %}</h2>
+								</div>
+
+								<div id="categorySelect" class="layout-list">
+									<ul>
+										<li><a class="category-link" href='{% url "blog" %}'>All Blogs</a></li>
+										{% for category in categories %}
+										<li><a href="/blog/blog?categories={{category.id}}" value="{{ category.id }}" class="category-link">{{ category.name }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div><!-- End Shop Layout Area -->
+							<!-- Shop Layout Area -->
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Authors' %}</h2>
+								</div>
+								<div id="categorySelect" class="layout-list">
+									<ul>
+										{% for author in authors %}
+										<li><a href="/blog/blog?authors={{author.id}}" value="{{ author.id }}" class="category-link">{{ author.name }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div><!-- End Shop Layout Area -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Recent Posts' %}</h2>
+								</div>
+								<!-- Recent Posts -->
+								<div class="recent-posts">
+									<ul>
+										{% for post in recent_posts %}
+										<li>
+											<div class="post-wrapper">
+												<div class="post-thumb">
+													<a href="#"><img alt="" src="{{post.image}}"></a>
+												</div>
+												<div class="post-info">
+													<h3 class="post-title recent-post-s"><a href="{% url 'blog_detail' pk=post.id %}">{{post.title}}</a></h3>
+													<div class="post-date recent-post-s">{{post.date}}</div>
+												</div>
+											</div>
+										</li>
+										{% endfor %}
+									</ul>
+								</div><!-- Recent Posts -->
+							</div><!-- End Shop Layout -->
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>{% translate 'Recent Comments' %}</h2>
+								</div>
+								<!-- Recent Comments -->
+								<div class="recent-comments">
+									<ul>
+										{% for comment in recent_comments %}
+										<li>
+											<div class="post-wrapper">
+												<div class="post-thumb">
+													<a href="#"><img alt="" src="{% static 'images/blog/b18.webp' %}"></a>
+												</div>
+												<div class="post-info">
+													<h3 class="post-title recent-post-s">{{comment.commenter_name}}</h3>
+													<p>
+														<a href="#">{{comment.comment_body}}</a>
+													</p>
+												</div>
+											</div>
+										</li>
+										{% endfor %}
+									</ul>
+								</div><!-- End Recent Comments -->
+							</div><!-- End Shop Layout -->
+							<!-- Popular Tag Area -->
+							<div class="popular-tag-area">
+								<div class="tag-title">
+									<h2>{% translate 'Popular Tags' %}</h2>
+								</div>
+								<!-- Shop Layout -->
+								<div class="shop-layout">
+									<div class="popular-tag">
+										<div class="tag-list">
+											{% for tag in tags %}
+											<ul>
+												<li><a href="/blog/blog?tags={{tag.id}}" value="{{ tag.id }}">{{ tag.name }}</a></li>
+											</ul>
+											{% endfor %}
+										</div>
+									</div>
+								</div><!-- End Shop Layout -->
+							</div><!-- End Popular Tag Area -->
+						</div><!-- End Left Sidebar -->
+					</div>
+					<div class="col-lg-9 col-md-12">
+						<!-- Blog Post Item Area -->
+						<div class="blog-post-item-ara">
+							<div class="blog-post-inner-item">
+							
+
+								<!-- Blog Post Single Item -->
+								{% for a in page_number %}
+								<div id="blog-list" class="blog-post-single-item">
+									<div class="single-item-img">
+										<a href="{% url 'blog_detail' pk=a.id %}">
+											<img alt="product" src="{{a.image.url}}">
+										</a>
+									</div>
+									<div class="single-item-content">
+										<h2><a href="{% url 'blog_detail' pk=a.id %}">{{a.title}}</a></h2>
+										<h3>{{a.date}}</h3>
+										<p>{{a.desc|truncatewords:33}}</p>
+										<div class="blog-action">
+											<a href="{% url 'blog_detail' pk=a.id %}">Read More</a>
+											<h4>Posted By {{a.author}}</h4>
+										</div>
+									</div>
+								</div><!-- End Blog Post Single Item -->
+								{% endfor %}
+								<!-- Blog Post Single Item -->
+							
+							</div>
+							<div class="blog-pagination">
+								<div class="pagination">
+									{% if page_number.has_previous %}
+									<a href="?page=1">&laquo; first</a>
+									<a href="?page={{ page_number.previous_page_number }}">previous</a>
+									{% endif %}									
+									<a href="#" class="active">{{ page_number.number }}</a>
+									{% if page_number.has_next %}
+									<a href="?page={{ page_number.next_page_number }}">next</a></li>
+									<a href="?page={{ page_number.paginator.num_pages }}">last &raquo;</a></li>
+									{% endif %}								
+								</div>
+							</div>
+						</div><!-- End Blog Post Item Area -->
+					</div>
+				</div>
+			</div>
+		</div><!-- Main Blog Post Area Area -->
+		<!-- Brand Area -->
+		<div class="brand-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="brand-add">
+							<a href="#"><img src="{% static 'images/brand-logo/bl5.webp' %}" alt="brand-logo"></a>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<!-- Brand Logo -->
+						<div class="brand-logo">
+							<div id="logo-carousel" class="owl-carousel">
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}"alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}" alt="brand-logo"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End Brand Area -->	
+		<!-- Footer Area -->
+	
+		
+		
+		<!-- Quickview Product -->
+		<div id="quickview-wrapper">
+			<!-- Modal -->
+			<div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						</div>
+						<div class="modal-body">
+							<div class="modal-product">
+								<div class="product-images">
+									<div class="main-image images">
+										<img alt="product" src="{% static 'images/products/s1.webp' %}">
+									</div>
+								</div><!-- End product-images -->
+								<div class="product-info">
+									<h1>Proin lectus ipsum</h1>
+									<div class="ratings">
+										<div class="rating-box">  
+											<div class="rating">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+											</div>  
+										</div>
+									</div>
+									<p class="rating-links">
+										<a href="#">1 Review(s)</a>
+										<span class="separator">|</span>
+										<a href="#" class="add-to-review">Add Your Review</a>
+									</p>
+									<p class="availability in-stock">Availability: <span>In stock</span></p>
+									<div class="quick-desc">
+										Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti
+									</div>
+									<div class="price-box">
+										<p class="price"><span class="special-price"><span class="amount">$155.00</span></span></p>
+									</div>
+									<div class="quick-add-to-cart">
+										<form method="post" class="cart">
+											<div class="qty-button"> 	
+												<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+												
+												<div class="box-icon button-plus"> 
+													<input type="button" class="qty-increase " onclick="var qty_el = document.getElementById('qty'); var qty = qty_el.value; if( !isNaN( qty )) qty_el.value++;return false;" value="+">
+												</div>	
+												<div class="box-icon button-minus">
+													<input type="button" class="qty-decrease" onclick="var qty_el = document.getElementById('qty');
+													var qty = qty_el.value;
+													if (!isNaN(qty) && qty > 0)
+														qty_el.value--;
+													return false;" value="-">
+												</div>
+											</div>
+											<div class="product-actions">
+												<button class="button btn-cart" title="Add to Cart" type="button"><i class="fa fa-shopping-cart">&nbsp;</i><span>Add to Cart</span></button>
+											</div>
+										</form>
+									</div>
+									<div class="social-sharing">
+										<div class="widget widget_socialsharing_widget">
+											<h3 class="widget-title-modal">Share this product</h3>
+											<ul class="social-icons">
+												<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
+												<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
+												<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
+												<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
+												<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div><!-- End product-info -->
+							</div><!-- End modal-product -->
+						</div><!-- End modal-body -->
+					</div><!-- End modal-content -->
+				</div><!-- End modal-dialog -->
+			</div><!-- End Modal -->
+		</div><!-- End Quickview Product -->
+				
+		
+		
+		
+		
+		
+	<!-- JS
+    ============================================ -->
+	
+	
+
+    </body>
+
+<!-- Mirrored from htmldemo.net/selphy/selphy/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Jun 2023 15:06:24 GMT -->
+</html>
+{% endblock %}

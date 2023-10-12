@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+		<!-- End Header Area -->
+
+		<!-- Main Menu Area -->
+		
+<!-- End Main Menu Area -->
+		<!-- Breadcurb Area -->
+		<div class="breadcurb-area">
+			<div class="container">
+				<ul class="breadcrumb">
+					<li class="home"><a href="#">Home</a></li>
+					<li>Blog Details</li>
+				</ul>
+			</div>
+		</div><!-- End Breadcurb Area -->
+		<!-- Shop Product Area -->
+		<div class="main-blog-page single-blog blog-post-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<!-- Left Sidebar-->
+						<div class="left-sidebar">
+							<div class="left-sidebar-title">
+								<h2>Shop By</h2>
+							</div>
+							<!-- Shop Layout -->
+							<!-- End Shop Layout Area -->
+							<!-- Shop Layout Area -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>Recent Posts</h2>
+								</div>
+								<!-- Recent Posts -->
+								<div class="recent-posts">
+									<ul>
+										{% for post in recent_posts %}
+										<li>
+											<div class="post-wrapper">
+												<div class="post-thumb">
+													<a href="#"><img alt="" src="{{post.image}}"></a>
+												</div>
+												<div class="post-info">
+													<h3 class="post-title recent-post-s"><a href="{% url 'blog_detail' pk=post.id %}">{{post.title}}</a></h3>
+													<div class="post-date recent-post-s">{{post.date}}</div>
+												</div>
+											</div>
+										</li>
+										<li>
+										{% endfor %}
+									</ul>
+								</div><!-- Recent Posts -->
+							</div><!-- End Shop Layout -->
+							<!-- Shop Layout -->
+							<div class="shop-layout">
+								<div class="layout-title">
+									<h2>Recent Comments</h2>
+								</div>
+								<!-- Recent Comments -->
+								<div class="recent-comments">
+									<ul>
+										{% for comment in recent_comments %}
+										<li>
+											<div class="post-wrapper">
+												<div class="post-thumb">
+													<a href="#"><img alt="" src="{% static 'images/blog/b18.webp' %}"></a>
+												</div>
+												<div class="post-info">
+													<h3 class="post-title recent-post-s">{{comment.commenter_name}}</h3>
+													<p>
+														<a href="#">{{comment.comment_body}}</a>
+													</p>
+												</div>
+											</div>
+										</li>
+										{% endfor %}
+									</ul>
+								</div><!-- End Recent Comments -->
+							</div><!-- End Shop Layout -->
+							<!-- Popular Tag Area -->
+						</div><!-- End Left Sidebar -->
+					</div>
+					<div class="col-lg-9 col-md-12">
+						<!-- single-blog start -->
+						<article class="blog-post-wrapper">
+							<div class="post-thumbnail">
+								<img src="{{blog.image.url}}" alt="" />
+							</div>
+							<div class="post-information">
+								<h2>{{blog.title}}</h2>
+								<div class="entry-meta">
+									<span class="author-meta"><i class="fa fa-user"></i> <a href="#">{{blog.author}}</a></span>
+									<span><i class="fa fa-clock-o"></i>{{blog.date}}</span>
+									<span class="tag-meta">
+										<i class="fa fa-folder-o"></i>
+										<a href="#">{{blog.category}}</a>
+									</span>
+									<span>
+										<i class="fa fa-tags"></i>	
+										{% for tag in blog.tag.all %}		
+											<a href="#">{{tag}},</a>
+										{% endfor %}
+									</span>
+									<span><i class="fa fa-comments-o"></i> <a href="#">{{comments_count}} comments</a></span>
+								</div>
+								<div class="entry-content">
+									<p>{{blog.desc}}</p>
+								</div>
+								<div class="social-sharing">
+									<h3>Share this post</h3>
+									<div class="sharing-icon">
+										<a href="#" data-bs-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
+										<a href="#" data-bs-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
+										<a href="#" data-bs-toggle="tooltip" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+										<a href="#" data-bs-toggle="tooltip" title="Google-plus"><i class="fa fa-google-plus"></i></a>
+										<a href="#" data-bs-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+									</div>
+								</div>
+								<div class="author-info">
+									<div class="author-avatar"><img src="{{blog.author.image.url}}" alt="admin"></div>
+									<div class="author-description">
+										<h2>About the Author: <a href="#">{{blog.author}}</a></h2>
+										<p>{{blog.author.about}}</p>
+									</div>
+								</div>
+							</div>
+						</article>
+						<div class="clear"></div>
+						<div class="single-post-comments">
+							<div class="comments-area">
+								<div class="comments-heading">
+									<h3>{{comments_count}} comments</h3>
+								</div>
+								<div class="comments-list">
+									{% if not comments %}
+										<p>Not comments added yet...</p>
+									
+									{% else %}
+										{% for comment in comments.all %}
+									<ul>
+										<li>
+											<div class="comments-details">
+												<div class="comments-list-img">
+													<img src="{% static 'images/blog/b18.webp' %}" alt="post-author">
+												</div>
+												<div class="comments-content-wrap">
+													<span>
+														<b><a href="#">{{comment.commenter_name}}</a></b>
+														Post author
+														<span class="post-time">{{comment.date_added}}</span>
+													</span>
+													<p>{{comment.comment_body}}</p>
+												</div>
+											</div>
+										</li>								
+									</ul>
+										{% endfor %}
+									{% endif %}
+								</div>
+							</div>
+							<div class="comment-respond">
+								<h3 class="comment-reply-title">Comments </h3>
+								<span class="email-notes">Your email address will not be published. Required fields are marked *</span>
+								<form method="POST">
+									{% csrf_token %}
+									<div class="row">
+										<div class="col-md-4">
+											<p>Name *</p>
+											{{ form.commenter_name }}
+										</div>
+										<div class="col-md-4">
+											<p>Email *</p>
+											{{ form.email }}
+										</div>
+										<div class="col-md-4">
+											<p>Phone number</p>
+											{{ form.phone }}
+										</div>
+										<div class="col-md-12 comment-form-comment">
+											<p>Your comments</p>
+											{{ form.comment_body }}
+										</div>
+										<input type="submit" value="Post Comment" />
+									</div>
+								</form>
+							</div>						
+						</div><!-- single-blog end -->
+						
+					</div>
+				</div>
+			</div>
+		</div><!-- End Shop Product Area -->
+		<!-- Brand Area -->
+		<div class="brand-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="brand-add">
+							<a href="#"><img src="{% static 'images/brand-logo/bl5.webp' %}" alt="brand-logo"></a>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<!-- Brand Logo -->
+						<div class="brand-logo">
+							<div id="logo-carousel" class="owl-carousel">
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl1.webp' %}" alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl2.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl3.webp' %}"  alt="brand-logo"></a>
+								<a href="#"><img src="{% static 'images/brand-logo/bl4.webp' %}"  alt="brand-logo"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End Brand Area -->	
+		<!-- Footer Area -->
+
+    </body>
+
+<!-- Mirrored from htmldemo.net/selphy/selphy/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Jun 2023 15:06:25 GMT -->
+</html>
+
+{% endblock %}

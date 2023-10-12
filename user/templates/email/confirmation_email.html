@@ -1,0 +1,9 @@
+{% autoescape off %}
+
+Hello, {{ user.full_name }},
+
+Please, confirm youe registration by clickind the following address:
+
+http://{{ domain }}{% url 'confirmation' uidb64=uid token=token %}
+
+{% endautoescape %}
